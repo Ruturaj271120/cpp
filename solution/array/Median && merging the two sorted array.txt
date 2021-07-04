@@ -1,0 +1,57 @@
+							Median
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Given an array arr[] of N integers, calculate the median
+ 
+
+Example 1:
+
+Input: N = 5
+arr[] = 90 100 78 89 67
+Output: 89
+Explanation: After sorting the array 
+middle element is the median 
+
+Example 2:
+
+Input: N = 4
+arr[] = 56 67 30 79
+Output: 61
+Explanation: In case of even number of 
+elemebts average of two middle elements 
+is the median
+
+ 
+
+Your Task:
+You don't need to read or print anything. Your task is to complete the function find_median() which takes the array as input parameter and returns the floor value of the median.
+ 
+
+Expected Time Complexity: O(n * log(n))
+Expected Space Complexity: O(1)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+link-->https://practice.geeksforgeeks.org/problems/find-the-median0527/1
+merging the array-->>https://www.geeksforgeeks.org/efficiently-merging-two-sorted-arrays-with-o1-extra-space/
+youtub-->>https://www.youtube.com/watch?v=2JzRBPFYbKE&t=16s
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+
+int median(int arr[],int len){
+    int ans;
+    if(len%2==0){
+        len=len/2;
+        ans=(arr[len]+arr[len-1])/2;
+        return ans;
+    }
+    else{
+        len=len/2;
+        return arr[len];
+    }
+
+}
+int main(){
+    int arr[]={90,100,78,89,67};
+    int len=sizeof(arr)/sizeof(arr[0]);
+    sort(arr,arr+len);
+    cout<<median(arr,len);
+ }  

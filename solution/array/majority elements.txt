@@ -1,0 +1,99 @@
+
+					Majority Element by Moore's Voting Algorithm(N/2,N/3)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+youtube link for N/2-->https://www.youtube.com/watch?v=AoX3BPWNnoE&t=608s
+youtube link for N/3-->https://www.youtube.com/watch?v=yDbkQd9t2ig&t=575s
+link of problem-->https://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int forN3(int arr[],int len){
+    int count1=0,count2=0,check1=0,check2=0;
+    int num1=-1,num2=-1;
+    for(int i=0;i<len;i++){
+        if(arr[i]==num1)   count1++;
+        else if(arr[i]==num2)   count2++;
+        else if(count1==0){
+            num1=arr[i];
+            count1++;
+        }
+        else if(count2==0){
+            num2=arr[i];
+            count2++;
+        }
+        else{
+            count1--;
+            count2--;
+        }
+    }
+    for(int i=0;i<len;i++){
+        if(num1==arr[i])    check1++;
+        if(num2==arr[i])    check2++;    
+    }
+    // cout<<" "<<check1<<" "<<check2;
+    if(check1>=(len/3)) cout<<"N/3-->"<<num1<<" ";
+    if(check2>=(len/3)) cout<<"N/3-->"<<num2<<" ";
+}
+int forN2(int arr[],int len){
+    int count=0;
+    int ele,num1,num2;
+    for(int i=0;i<len;i++){
+        if(count==0)    ele=arr[i];
+        else if(ele==arr[i])    count++;
+        else    count--;
+    }
+    if(count==0){
+        num1=arr[0];
+        for(int i=0;i<len;i++){
+            // arr[i]=num1;
+            if(num1!=arr[i]){
+                num2=arr[i];
+            }
+        }
+        cout<<"N/2-->"<<num1<<" ";
+        cout<<"N/2-->"<<num2<<" ";
+    }
+    else   cout<<"N/2-->"<<ele<<" ";
+}
+
+int main(){
+    int arr1[]={3, 1, 2, 2, 1, 2, 3, 3};
+    int arr2[]={7,7,5,7,5,1,5,7,5,5,7,7,5,5,5,5};
+    int len1=sizeof(arr1)/sizeof(arr1[0]);
+    int len2=sizeof(arr2)/sizeof(arr2[0]);
+    forN3(arr1,len1);
+    forN2(arr2,len2);
+ }   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

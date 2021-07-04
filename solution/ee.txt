@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int prime[100]={0};
+void fun(int n){
+    for(int i=2;i<=n;i++){
+        if(prime[i]==0){
+            for(int j=i*i;j<=n;j+=i){
+                prime[j]=1;
+            }
+        }
+    }
+}
+int main(){
+    fun(100);
+    int n,count=0,p;
+    cin>>n;
+    for(int i=2;i<n/2;i++){
+        if(n%i==0){
+            if(prime[i]==0){
+                p=i;
+                break;
+            }
+        }
+    }
+    cout<<n-p;
+    
+}

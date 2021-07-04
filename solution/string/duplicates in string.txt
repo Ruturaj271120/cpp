@@ -1,0 +1,53 @@
+							duplicates in string
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Print all the duplicates in the input string
+Difficulty Level : Basic
+Last Updated : 14 Apr, 2021
+Write an efficient program to print all the duplicates and their counts in the input string 
+
+Method 1: Using hashing
+Algorithm: Let input string be “geeksforgeeks” 
+1: Construct character count array from the input string.
+count[‘e’] = 4 
+count[‘g’] = 2 
+count[‘k’] = 2 
+……
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// // this is done by me 
+// // +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string str = "Aabbaa";
+    // this converts all string to lowercase...
+    transform(str.begin(),str.end(),str.begin(), ::tolower);
+    // why i took arr[26]?-->count of alphabets from a to z is 2
+    int arr[26];
+    // then considers all array elements as 0
+    for(int i=0;i<26;i++)   arr[i]=0;
+    // then considering a=0 in the array ..
+    // so arr['a'-'a']=0 index ,arr['b'-'a']=1 in this way 
+    // it will increase frequency
+    for(int i=0;i<str.size();i++)   arr[str[i]-'a']++;
+    
+    for(int i=0;i<26;i++){
+        if(arr[i]>=2){
+            // her i am typecasting (i+'a') so that we 
+            // can get alphabets accoring to ascii values..
+            // char(0+97)=a,char[1+97]=b this is according to ascii values
+            cout<<char(i+'a')<<"-->"<<arr[i]<<endl;
+        }
+
+
+    }
+
+}   

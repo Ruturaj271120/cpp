@@ -1,0 +1,90 @@
+							Row with max 1s 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Given a boolean 2D array of n x m dimensions where each row is sorted. Find the 0-based index of the first row that has the maximum number of 1's.
+
+Example 1:
+
+Input: 
+N = 4 , M = 4
+Arr[][] = {{0, 1, 1, 1},
+           {0, 0, 1, 1},
+           {1, 1, 1, 1},
+           {0, 0, 0, 0}}
+Output: 2
+Explanation: Row 2 contains 4 1's (0-based
+indexing).
+
+Example 2:
+
+Input: 
+N = 2, M = 2
+Arr[][] = {{0, 0}, {1, 1}}
+Output: 1
+Explanation: Row 1 contains 2 1's (0-based
+indexing).
+
+Your Task:  
+You don't need to read input or print anything. Your task is to complete the function rowWithMax1s() which takes the array of booleans arr[][], n and m as input parameters and returns the 0-based index of the first row that has the most number of 1s. If no such row exists, return -1.
+ 
+
+Expected Time Complexity: O(N*M)
+Expected Auxiliary Space: O(1)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+link-->https://practice.geeksforgeeks.org/problems/row-with-max-1s0023/1
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int matrix[][4] = {{0, 1, 1, 1},
+           {0, 0, 1, 1},
+           {1, 1, 1, 1},
+           {0, 0, 0, 0}};
+    int num=1,max=0,count=0,max1;
+    for(int i=0;i<4;i++){
+        max=0,count=0;
+        for(int j=0;j<4;j++){
+               if(num==matrix[i][j]){
+                    count++;
+               }
+        }
+           if(max<count)   max1=count;
+        
+    }
+    cout<<max1;
+ }   
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Expected Time Complexity: O(N+M)
+Expected Auxiliary Space: O(1)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int matrix[4][4] = {{0, 0, 1, 1},
+           {0, 0, 1, 1},
+           {0, 0, 1, 1},
+           {0, 0, 0, 0}};
+    int i=0,j=0,num=1,flag=0;
+    while(i<4 && j<4){
+   
+        if(matrix[i][j]==num){
+            cout<<4-j;
+            break;
+        }   
+        if(matrix[i][j]<num) i++;
+        if(i==4){
+      
+            i=0;
+            j++;
+
+        }
+    } 
+    
+ }   

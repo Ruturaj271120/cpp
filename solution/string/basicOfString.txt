@@ -1,0 +1,116 @@
+
+							Basic of string in c++;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    // string s="hello i am ruturaj";
+    // string s1(5,'n');
+    // cout<<s1;
+    // nnnnn
+    // -----------------------------
+    // string s;
+    // getline(cin,s);
+    // cout<<s;
+    // input:hello this is ruturaj
+    // output:hello this is ruturaj
+    // ---------------------------
+    // string s;
+    // cin>>s;
+    // cout<<s;
+    // input:hello this is ruturaj
+    // output:hello
+    // ---------------------------
+    // string s1="fam";
+    // string s2="ily";
+    // s1.append(s2);
+    // cout<<s1;
+    // output:family
+    // -------------------------
+    // in this example string values will not change
+     // string s1="fam";
+     // string s2="ily";
+     // cout<<s1+s2;
+    // output:family
+    // ---------------------------------
+        // string s1="fam";
+        // string s2="ily";
+        // cout<<s1[2];
+        // output:m
+    // ------------------------------
+    // string s="asdfkhsdh sdahfh jshf hsjadh";
+    // s.clear();
+    // if(s.empty())   cout<<"is empty";
+    // cout<<s;
+    // -------------------------------
+    // string s1="abc";
+    // string s2="xyz";
+    // cout<<s2.compare(s1);
+    // -----------------------------
+    // string s="ruturajDyawanpalli";
+    // s.erase(3,4);
+    // here first 3 is location and 4 is number of elements to erase
+    // cout<<s;
+    //
+    // output:rutDyawanpalli
+    // ------------------------------------
+    // string s="ruturajDyawanpalli";
+    // cout<<s.find("utu");
+    // output:1
+    // ---------------------------------------------
+    // string s="ruturajDyawanpalli";
+    // s.insert(7,"nandkishore");
+    // cout<<s;
+    // output:ruturajnandkishoreDyawanpalli
+    // ---------------------------------------
+    // string s="ruturajDyawanpalli";
+    // cout<<s.size()<<endl;
+    // cout<<s.length();
+    // output:18
+    //         18
+    // ---------------------------------------------
+    // string s="ruturajDyawanpalli";
+    // string s1=s.substr(7,11);
+    // cout<<s1;
+    // output=Dyawanpalli
+    // ---------------------------------------
+    // string s="222";
+    // int d=stoi(s);
+    // cout<<d;
+    // output:222      this is converting char to integer 
+    // -------------------------------------------
+    // int x=33;
+    // cout<<to_string(x)+"4";
+    // output:334    this is converting integer to char
+    // -----------------------------------------------
+    // string s="ashdfhuedsj";
+    // sort(s.begin(),s.end());
+    // cout<<s;
+    // output:addefhhjssu
+    // ----------------------------------------------
+     // string s="ruturajdyawanpalli";
+     // transform(s.begin(),s.end(),s.begin(), ::toupper);
+     // cout<<s<<endl;
+     // transform(s.begin(),s.end(),s.begin(), ::tolower);
+     // cout<<s;
+     // ------------------------------------------------
+    // string s="325235";
+    // sort(s.begin(),s.end(),greater<int>());
+    // cout<<s;
+    // ---------------------------------------------------
+     if(str1[i] != string::npos){
+            continue;
+        }
+    
+
+
+
+}   
+  
+
+
+
+

@@ -1,0 +1,57 @@
+						Array Subset of another array
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example 1:
+
+Input:
+a1[] = {11, 1, 13, 21, 3, 7}
+a2[] = {+
+Output:
+Yes
+Explanation:
+a2[] is a subset of a1[]
+
+Example 2:
+
+Input:
+a1[] = {1, 2, 3, 4, 5, 6}
+a2[] = {1, 2, 4}
+Output:
+Yes
+Explanation:
+a2[] is a subset of a1[]
+
+Example 3:
+
+Input:
+a1[] = {10, 5, 2, 23, 19}
+a2[] = {19, 5, 3}
+Output:
+No
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+link-->>https://practice.geeksforgeeks.org/problems/array-subset-of-another-array2317/1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int subset(int arr1[],int arr2[],int len1,int len2){
+    unordered_map<int,int> map;
+    int flag=0;
+    for(int i =0;i<len1;i++){
+        map[arr1[i]]++;
+    }
+    for(int i =0;i<len2;i++){
+        if(map[arr2[i]]!=1){
+            cout<<"no";
+            flag=1;
+        }
+    }
+    if(flag==0)     cout<<"yes";
+}
+int main(){
+    int arr1[]={11, 1, 13, 21, 3, 7};
+    int arr2[]={11, 3, 7, 1};
+    int len1=sizeof(arr1)/sizeof(arr1[0]);
+    int len2=sizeof(arr2)/sizeof(arr2[0]);
+    subset(arr1,arr2,len1,len2);
+
+ }   
+  

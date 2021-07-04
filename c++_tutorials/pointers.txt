@@ -1,0 +1,33 @@
+
+							pointers
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+link-->>https://www.youtube.com/watch?v=gHxmAgedyDk&list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ&index=29
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+void swap(int *a,int *b){
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+    // cout<<*a<<*b;
+}
+
+int main(){   
+    int a=10;
+    int b=20;
+    int *aptr,*bptr;
+    aptr=&a;
+    bptr=&b;
+    swap(aptr,bptr);
+    cout<<a<<b;
+    // int a=10;
+    // int *ptr=&a;
+    // cout<<*ptr<<"\n";
+    // cout<<&a<<"\n";
+    // cout<<ptr<<"\n";
+    // cout<<&ptr<<"\n";
+    // *ptr=20;
+    // cout<<a<<ptr;
+
+
+}

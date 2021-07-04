@@ -1,0 +1,64 @@
+					   maximum product  subarray
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example 1:
+
+Input:
+N = 5
+Arr[] = {6, -3, -10, 0, 2}
+Output: 180
+Explanation: Subarray with maximum product
+is  6, -3, -10 which gives product as 180.
+Example 2:
+
+Input:
+N = 6
+Arr[] = {2, 3, 4, 5, -1, 0}
+Output: 120
+Explanation: Subarray with maximum product
+is 2, 3, 4, 5 which gives product as 120.
+
+
+Input:
+Arr[] = {-6, 4, -5, 8, -10, 0, 8}
+Output: 1600
+
+
+Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(1)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+youtube-->https://www.youtube.com/watch?v=0exOBHgzApE&t=462s
+
+in this video we have to edite some part :-
+instead of considering max=arr[0],min=arr[0],max_so_far=arr[0] we have to consider all that values to "0"
+
+link-->https://practice.geeksforgeeks.org/problems/maximum-product-subarray3604/1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int findMaxProduct(int arr[], int n)
+{
+    int max_ending = 0, min_ending = 0;
+    int max_so_far = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int temp = max_ending;
+        // cout<<temp<<" ";
+        // cout<<"\n";
+        max_ending = max(arr[i], max(arr[i] * max_ending, arr[i] * min_ending));
+        // cout<<"me-->"<<max_ending<<" ";
+        // cout<<"\n"; 
+        min_ending = min(arr[i], min(arr[i] * temp, arr[i] * min_ending));
+        // cout<<"mi-->"<<min_ending<<" ";
+        // cout<<"\n"; 
+        max_so_far = max(max_so_far, max_ending);
+        // cout<<"mf-->"<<max_so_far<<" ";
+        // cout<<"\n";
+    } 
+    return max_so_far;
+}
+int main(){
+    int arr[]={-6, 4, -5, 8, -10, 0, 8};
+    int len=sizeof(arr)/sizeof(arr[0]);
+    cout<<findMaxProduct(arr,len);
+ }   
+  

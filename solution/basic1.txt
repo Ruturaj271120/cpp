@@ -1,0 +1,212 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    char ch;
+    cin>>ch;
+    cout<<char(toupper(ch));
+}
+---------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    char ch;
+    cin>>ch;
+    char s=char(tolower(ch));
+    if(s=='a' || s=='e' || s=='i' || s=='o'|| s=='u'){
+        cout<<"vowel";
+    }
+    else{
+        cout<<"consonant";
+    }
+}
+-------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    char ch[5];
+    cin>>ch;
+    cout<<ch;
+    int len=sizeof(ch)/sizeof(ch[0]);
+    cout<<len;
+    for(int i=0;i<3;i++){\
+
+        if(isalpha(ch[i])){
+            cout<<"alphabet"<<"\n";
+        }
+        else if(isdigit(ch[i])){
+            cout<<"number"<<"\n";
+        }
+        else{
+            cout<<"nooo"<<"\n";
+        }
+    }
+}
+---------------------------------------------------------------------------
+ if(str1[i] != string::npos){
+            continue;
+        }
+------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    char ch;
+    cin>>ch;
+    cout<<int(ch);
+    
+}
+-------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a;
+    cin>>a;
+    int c=0;
+    while(a>0){
+        a=a/10;
+        c++;
+    }
+    cout<<c;
+}
+---------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a;
+    cin>>a;
+    int c=0;
+    for(int i=1;i<=a/2;i++){
+        if(a%i==0){
+          cout<<i<<"\n";
+        }
+        
+    }
+}
+-----------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a;
+    cin>>a;
+    int f=0;
+    int s=1;
+    int sum=0;
+    cout<<f<<"\n"<<s<<"\n";
+    for(int i=2;i<a;i++){
+        sum=f+s;
+        cout<<sum<<"\n";
+        f=s;
+        s=sum;
+
+    }
+}
+--------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a;
+    cin>>a;
+    if(a>0){
+        cout<<"po";
+    }
+    else{
+        cout<<"ne";
+    }
+}
+--------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a;
+    cin>>a;
+    if(a%2==0){
+        cout<<"even";
+    }
+    else{
+        cout<<"old";
+    }
+}
+---------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b;
+    cin>>a;
+    cin>>b;
+    cout<<pow(a, 4)<<"\n";
+    cout<<setprecision (2)<<fixed<<sqrt(a*a+b*b);
+}
+---------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b,store=0;
+    cin>>a;
+    while(a>0){
+        int re=a%10;
+        store=store*10+re;
+        a/=10;
+    }
+    cout<<store;
+}
+----------------------------------------------------------------------
+// #include<bits/stdc++.h>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b,store=0;
+    cin>>a;
+    int temp=a;
+    while(a>0){
+        int re=a%10;
+        store=store*10+re;
+        a/=10;
+    }
+    if(store==temp) cout<<"palimdrome";
+    else cout<<"no";
+}
+------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b,store=0;
+    cin>>a;
+    if(a%4==0){
+        if(a%100 && a%400){
+            cout<<"leap";
+        }
+        else{
+            cout<<"leap";
+        }
+        
+    }
+    else{
+        cout<<"noo";
+    }
+}
+---------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int sum=0,n,c=0;
+    cin>>n;
+    int temp=n;
+    while(n>0){
+        n/=10;
+        c++;
+    }
+    temp=n;
+    while(temp>0){
+        int rem=temp%10;
+        sum=sum+pow(rem,c);
+        n/=10;
+    }
+
+    if(sum==n){
+        cout<<"amstronge";
+    }
+    else{
+        cout<<"Noo";
+    }
+}
+----------------------------------------------------------------------
+

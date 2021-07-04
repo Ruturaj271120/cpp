@@ -1,0 +1,217 @@
+reverse of array
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+If we do this code then original array will not change permanently
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include<iostream.h>
+#include<conio.h>
+void main (){
+	int i,len;
+	clrscr();
+	int arr[5];
+	len=sizeof(arr)/sizeof(arr[0]);
+	for(i=0;i<len;i++){
+		cin>>arr[i];
+	}
+	cout<<"original array ";
+	for(i=0;i<len;i++){
+		cout<<arr[i];
+	}
+	cout<<"\n"<<"rev array"<<"\n";
+	for (i=len-1;i>=0;i--){
+		cout<<arr[i]<<" ";
+	}
+	getch();
+
+}
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+If we do this code the original array will change permanently
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#include<iostream.h>
+#include<conio.h>
+int main(){
+	int i,j,len,temp;
+	clrscr();
+	int a[5];
+	len=sizeof(a)/sizeof(a[0]);
+	j=len;
+	for(i=0;i<j;i++){
+		cin>>a[i];
+	}
+	cout<<"original array"<<"\n";
+	for(i=0;i<j;i++){
+		cout<<a[i]<<" ";
+	}
+	for(i=0;i<(len/2);i++){
+		j--;
+		temp=a[i];
+		a[i]=a[j];
+		a[j]=temp;
+
+
+	}
+	cout<<"\n"<<"rev array"<<"\n";
+	for(i=0;i<len;i++){
+		cout<<a[i]<<" ";
+
+	}
+	getch();
+	return 0;
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+max and min without using math function
++++++++++++++++++++++++++++++++++++++++++++++++
+#include<iostream>
+
+using namespace std;
+int main(){
+	int i,len,min1,max1;
+	int a[5]={1,2,3,4,5};
+	min1=a[0];
+	max1=a[0];
+	len=sizeof(a)/sizeof(a[0]);
+	for(i=0;i<len;i++){
+		if (min1>a[i]){
+			min1=a[i];
+		}else if(max1<a[i]){
+			max1=a[i];
+		}
+		
+	}
+	cout<<"min-->"<<min1<<"\n";
+	cout<<"max-->"<<max1;
+
+
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+max and min with using math function
++++++++++++++++++++++++++++++++++++++++++++++++
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+	int i,len,min1,max1;
+	int a[5]={1,2,3,4,5};
+	min1=a[0];
+	max1=a[0];
+	len=sizeof(a)/sizeof(a[0]);
+	for(i=0;i<len;i++){
+		min1=min(min1,a[i]);
+		max1=max(max1,a[i]);
+		
+	}
+	cout<<"min-->"<<min1<<"\n";
+	cout<<"max-->"<<max1;
+
+
+}
+
+++++++++++++++++++++++++++++++++
+Kth smallest element with o(n2)
+++++++++++++++++++++++++++++++++
+
+#include<iostream>
+using namespace std;
+void sorting(int arr[],int kth,int size){
+	int i,j,temp;
+	for(i=0;i<size;i++){
+		for(j=i+1;j<size;j++){
+			if(arr[i]>arr[j]){
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		}
+	}
+	cout<<"\n"<<"Sorted arr-->";
+	for(i=0;i<size;i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<"\n"<<"kth element-->"<<arr[kth-1];
+	
+}
+
+int main(){
+	int i,noArray,kElement,arraySize;
+	int arr[10];
+	// cout<<"enter number of array u want-->";
+	cin>>noArray;
+	while(noArray>0){
+		// cout<<"\n"<<"Enter no of elements in array-->";
+		cin>>arraySize;
+		// cout<<"\n"<<"array elements-->";
+		for(i=0;i<arraySize;i++){
+			cin>>arr[i];
+		}
+		// cout<<"\n"<<"Enter kth smallest element-->";
+		cin>>kElement;
+		sorting(arr,kElement,arraySize);
+		// for(i=0;i<arraySize;i++){
+		// 	cout<<arr[i]<<" ";
+		// }
+		// cout<<"-->"<<kElement<<"\n";
+		noArray--;
+	}
+	
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+kth nearest element
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#include<iostream>
+using namespace std;
+void sorting(int arr[],int kth,int size){
+	int i,j,temp;
+	for(i=0;i<size;i++){
+		for(j=i+1;j<size;j++){
+			if(arr[i]>arr[j]){
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		}
+	}
+	cout<<"\n"<<"Sorted arr-->";
+	for(i=0;i<size;i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<"\n"<<"kth element-->"<<arr[kth-1];
+	
+}
+
+int main(){
+	int i,noArray,kElement,arraySize;
+	int arr[10];
+	// cout<<"enter number of array u want-->";
+	cin>>noArray;
+	while(noArray>0){
+		// cout<<"\n"<<"Enter no of elements in array-->";
+		cin>>arraySize;
+		// cout<<"\n"<<"array elements-->";
+		for(i=0;i<arraySize;i++){
+			cin>>arr[i];
+		}
+		// cout<<"\n"<<"Enter kth smallest element-->";
+		cin>>kElement;
+		sorting(arr,kElement,arraySize);
+		// for(i=0;i<arraySize;i++){
+		// 	cout<<arr[i]<<" ";
+		// }
+		// cout<<"-->"<<kElement<<"\n";
+		noArray--;
+	}
+	
+}
+
+

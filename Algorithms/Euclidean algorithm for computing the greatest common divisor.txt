@@ -1,0 +1,17 @@
+
+					Euclidean algorithm for computing the greatest common divisor
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+yotube-->https://www.youtube.com/watch?v=VWOUh4w_zVI
+Algo-->https://cp-algorithms.com/algebra/euclid-algorithm.html
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){    
+    int a=10;
+    int b=15;                                       
+    while(b>0){
+        a%=b;
+        swap(a,b);
+    }
+    cout<<a;
+}

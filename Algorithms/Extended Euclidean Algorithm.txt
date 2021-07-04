@@ -1,0 +1,34 @@
+					Extended Euclidean Algorithm
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+youtube-->>https://www.youtube.com/watch?v=H4AuhS7pN48
+algorithm-->>https://cp-algorithms.com/algebra/extended-euclid-algorithm.html
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int Euclidean(int a, int b, int& x, int& y){
+    if (b == 0) {
+        x = 1;
+        y = 0;
+        return a;
+    }
+    int x1=0, y1=0;
+    int d = Euclidean(b, a % b, x1, y1);
+    x = y1;
+    //cout<<"x1-->"<<x1<<"\n";
+    //cout<<"y1-->"<<y1<<"\n";
+    //cout<<"x-->"<<x<<"\n";
+    //cout<<"y-->"<<y<<"\n";
+    y = x1 - y1 * (a / b);
+    //cout<<"y-->"<<y<<"\n";
+    
+    return d;
+}
+int main(){    
+    int a=24;
+    int b=34; 
+    int x,y;
+    cout<<Euclidean(a,b,x,y)<<" "; 
+    swap(x,y);                                   
+    cout<<x<<" ";
+    cout<<y<<" ";
+}
