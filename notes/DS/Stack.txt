@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+int arr[100], top=-1;
+bool push(int n){
+    if(top>100){
+        return false;
+    }
+    else{
+        top++;
+        arr[top]=n;
+    }
+}
+bool pop(){
+    if(top==-1){
+        return false;
+    }
+    else{
+        top--;
+    }
+
+}
+int displayTop(){
+    if(top==-1){
+        cout<<"underflow";
+    }
+    else{
+        return arr[top];
+    }
+}
+
+int main(){
+    int num,n;
+    cin>>num;
+    for(int i=0;i<num;i++){
+        cin>>n;
+        push(n);
+    }
+    pop();
+    cout<<displayTop();
+
+}

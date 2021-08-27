@@ -1,0 +1,56 @@
+----------------------------------------------------------------------------------------------
+With stl
+----------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.pop();
+    cout<<q.front();
+    cout<<q.back();
+}
+-------------------------------------------------------------------------------------------
+Without stl
+--------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int arr[100],front=0,rare=0;
+bool push(int n){
+    if(rare>100){
+        return false;
+    }
+    else{
+        arr[rare]=n;
+        rare++;
+    }
+}
+bool pop(){
+    if(front==rare){
+        return false;
+    }
+    else{
+        for(int i=0;i<rare-1;i++){
+            arr[i]=arr[i+1];
+        }
+        rare--;
+    }
+}
+void displayRF(){
+    cout<<"front-->"<<arr[front]<<"\t"<<"rare-->"<<arr[rare-1]<<"\n";
+}
+int main(){
+    push(1);
+    push(2);
+    push(3);
+    push(4);
+    push(5);
+    push(6);
+    pop();
+    displayRF();
+    pop();
+    displayRF();
+}

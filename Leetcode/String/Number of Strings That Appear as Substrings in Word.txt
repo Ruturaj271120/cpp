@@ -1,0 +1,21 @@
+
+WEB-->https://leetcode.com/problems/number-of-strings-that-appear-as-substrings-in-word/
+--------------------------------------------------------------------------------------------------------------------------------------
+class Solution {
+public:
+    int numOfStrings(vector<string>& patterns, string word) {
+        int cntt=0;
+        for(auto s:patterns)
+        {
+//             if the string is substring of word
+            if(word.find(s)!=string::npos)
+            {
+                cntt++;
+            }
+//             if it's equal to the word
+            else if(s==word)
+                cntt++;
+        }
+        return cntt;
+    }
+};

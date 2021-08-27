@@ -1,0 +1,45 @@
+--------------------------------------------------------------------------------------------
+		                       MAP
+----------------------------------------------------------------------------------------------
+in this duplicate keys can't be stored 
+----------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    map<int,int> mpp;
+    mpp[1]=1;
+    mpp[3]=6;
+    mpp[4]=4;
+    mpp[5]=5;
+    mpp[6]=6;
+    mpp[1]=7;
+    mpp.insert({7,1});
+    cout<<mpp[1];
+    auto it=mpp.find(3);
+    cout<<(*it).first<<"\n";
+    for(auto it:mpp){
+        cout<<it.first<<"\t"<<it.second<<"\n";
+    }
+   
+}
+----------------------------------------------------------------------------------------------
+			MULTIMAP
+----------------------------------------------------------------------------------------------
+in this map we can store duplicate keys also
+----------------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    multimap<int,int> mpp;
+    mpp.insert({1,2});
+    mpp.insert({2,3});
+    mpp.insert({3,4});
+    mpp.insert({4,5});
+    mpp.insert({4,3});
+    auto it=mpp.find(4);
+    cout<<(*it).second<<"\n";
+    for(auto it:mpp){
+        cout<<it.first<<"\t"<<it.second<<"\n";
+    }
+   
+}
